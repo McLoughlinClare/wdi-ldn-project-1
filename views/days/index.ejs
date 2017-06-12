@@ -1,0 +1,35 @@
+<h1>User Profile</h1>
+
+<h1>Welcome</h1>
+<h1 class="title"><%= user.username %></h1>
+
+
+<div>
+  <a href="/days/new">Log</a>
+</div>
+
+<div class="columns">
+  <div class="column">
+    <% for (let i = 0; i < days.length; i++) { %>
+      <% if (i === 0 || days[i].createdBy !== days[i-1].createdBy) { %>
+        <h1><%= days[i].createdBy.username %></h1>
+        <% } %>
+        <div class="columns">
+        <div class="column">
+        <a href="/days/<%= days[i].id %>">
+        </a>
+        </div>
+        <div class="column">
+        <a href="/days/<%= days[i].id %>">
+        <img src="<%= days[i].imageSRC %>">
+        </a>
+        </div>
+        <h2 class="subtitle"><a href="/users/<%= days[i].createdBy.id %>"><%= days[i].createdBy.username %></a></h2>
+        <p><%= days[i].summary %></p>
+        <hr/>
+        <a href="/days/<%= days[i].id %>" class="button">View Day</a>
+        </div>
+        </div>
+        <% } %>
+      </div>
+    </div>

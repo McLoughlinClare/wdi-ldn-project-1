@@ -1,0 +1,19 @@
+<h1>new record</h1>
+
+<form method="POST" action="/days" enctype="multipart/form-data">
+  <div class="field">
+  <label class="label" for="image">Image</label>
+  <label class="button is-primary" for="image">Choose file</label>
+  <input type="file" name="image" id="image" hidden>
+</div>
+  <div class="dailyForm">
+    <label for="summary">Summarise today in one sentence</label>
+    <input type="text" name="summary" id="summary" class="dailyField">
+  </div>
+  <div class="dailyForm">
+    <label for="feeling">How are you feeling right now?</label>
+    <input type="checkbox" name="feeling" class="dailyField" value="happy">Happy
+    <input type="checkbox" name="feeling" class="dailyField" value="sad">Sad
+  </div>
+  <button class="button">submit</button>
+</form>
