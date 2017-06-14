@@ -8,11 +8,15 @@ function daysIndex(req, res, next) {
   .catch(next);
 }
 
-function daysNew(req, res){
-  return res.render('days/new');
+function daysNew(req, res, next){
+  Day
+    .find()
+    .exec()
+    .then((days) => res.render('days/new', { days }))
+    .catch(next);
 }
 
-function daysId (req, res, next) {
+function daysShow (req, res, next) {
   Day
   .findById(req.params.id)
   .exec()
@@ -49,6 +53,7 @@ function daysEdit (req, res, next) {
   .catch(next);
 }
 
+
 function daysUpdate (req, res, next) {
   Day
     .findById(req.params.id)
@@ -84,7 +89,7 @@ function daysDelete (req, res, next) {
 module.exports ={
   index: daysIndex,
   new: daysNew,
-  id: daysId,
+  show: daysShow,
   create: createRoute,
   edit: daysEdit,
   update: daysUpdate,

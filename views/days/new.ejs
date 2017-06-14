@@ -1,19 +1,162 @@
-<h1>new record</h1>
+<header class="newDay">
+  <h1>
+    <span class="quote"></span>
+  </h1>
+  <h2>
+    <span class="today"></span>
+  </h2>
+
+</header>
+
+
+
+<p> Hours slept last night:
+  <span class="sleep"></span>
+</p>
+<p> Steps taken today:
+<span class="steps"></span>
+</p>
+
 
 <form method="POST" action="/days" enctype="multipart/form-data">
   <div class="field">
-  <label class="label" for="image">Image</label>
-  <label class="button is-primary" for="image">Choose file</label>
-  <input type="file" name="image" id="image" hidden>
-</div>
+    <label class="label" for="image">Image</label>
+    <label class="button is-primary" for="image">Choose file</label>
+    <input type="file" name="image" id="image" hidden>
+  </div>
   <div class="dailyForm">
     <label for="summary">Summarise today in one sentence</label>
     <input type="text" name="summary" id="summary" class="dailyField">
   </div>
+
+  <div>
+    <input type="hidden" name="stepsTaken" id="stepsTaken" value="">
+    <input type="hidden" name="hoursSlept" id="hoursSlept" value="">
+    <input type="hidden" name="formattedHoursSlept" id="formattedHoursSlept" value="">
+  </div>
+
+  <div class="colorform">
+    what colour sums up today?:
+    <input type="color" name="favcolor"><br>
+  </div>
+
+
+
   <div class="dailyForm">
     <label for="feeling">How are you feeling right now?</label>
-    <input type="checkbox" name="feeling" class="dailyField" value="happy">Happy
-    <input type="checkbox" name="feeling" class="dailyField" value="sad">Sad
+
+
+    <div id ="dailyFeeling" class="container">
+      <div class = "row">
+        <div class="emotion">
+          <img src ="/assets/scared.png"><input type="checkbox" name="feeling" class="dailyField" value="scared">Sacred
+        </div>
+        <div class="emotion">
+          <img src ="/assets/shocked.png"><input type="checkbox" name="feeling" class="dailyField" value="shocked">Shocked
+        </div>
+        <div class="emotion">
+          <img src ="/assets/shy.png"><input type="checkbox" name="feeling" class="dailyField" value="shy">Shy
+        </div>
+        <div class="emotion">
+          <img src ="/assets/sleepy.png"><input type="checkbox" name="feeling" class="dailyField" value="tired">Tired
+        </div>
+      </div>
+
+      <div class = "row">
+        <div class="emotion">
+          <img src ="/assets/stressed.png"><input type="checkbox" name="feeling" class="dailyField" value="stressed">Stressed
+        </div>
+        <div class="emotion">
+          <img src ="/assets/worried.png"><input type="checkbox" name="feeling" class="dailyField" value="worried">Worried
+        </div>
+        <div class="emotion">
+          <img src ="/assets/suprised.png"><input type="checkbox" name="feeling" class="dailyField" value="suprised">Suprised
+        </div>
+        <div class="emotion">
+          <img src ="/assets/sad.png"><input type="checkbox" name="feeling" class="dailyField" value="sad">Sad
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="emotion">
+          <img src="/assets/neutral.png"><input type="checkbox" name="feeling" class="dailyField" value="neutral">Neutral
+        </div>
+        <div class="emotion">
+          <img src ="/assets/mischevious.png"><input type="checkbox" name="feeling" class="dailyField" value="mischevious">Mischevious
+        </div>
+        <div class="emotion">
+          <img src ="/assets/inlove.png"><input type="checkbox" name="feeling" class="dailyField" value="inLove">In love
+        </div>
+        <div class="emotion">
+          <img src ="/assets/heartbroke.png"><input type="checkbox" name="feeling" class="dailyField" value="heartbroken">Heartbroken
+        </div>
+      </div>
+
+      <div class = "row">
+        <div class="emotion">
+          <img src ="/assets/happy.png"><input type="checkbox" name="feeling" class="dailyField" value="happy">Happy
+        </div>
+        <div class="emotion">
+          <img src ="/assets/annoyed.png"><input type="checkbox" name="feeling" class="dailyField" value="annoyed">Annoyed
+        </div>
+        <div class="emotion">
+          <img src ="/assets/disappointed.png"><input type="checkbox" name="feeling" class="dailyField" value="disappointed">disappointed
+        </div>
+        <div class="emotion">
+          <img src ="/assets/excited.png"><input type="checkbox" name="feeling" class="dailyField" value="excited">Excited
+        </div>
+      </div>
+    </div>
+
+    <div class ="depressionSelfAssessment"
+    <p>At any point today have you noticed any of the following symptoms?</p>
+
+    <p> Have you been moving or speaking slowly?</p>
+    <input type="radio" name="slowMoving" value="Yes" checked> Yes
+    <input type="radio" name="slowMoving" value="No"> No
+    <input type="radio" name="slowMoving" value="NotSure"> Not Sure
+    <p> Have you been very fidgety, so that other people could notice? </p>
+    <input type="radio" name="fidgety" value="Yes" checked> Yes
+    <input type="radio" name="fidgety" value="No"> No
+    <input type="radio" name="fidgety" value="NotSure"> Not Sure
+    <p> Have you had some trouble concentrating on things like reading the paper or watching TV? </p>
+    <input type="radio" name="concentrating" value="Yes" checked> Yes
+    <input type="radio" name="concentrating" value="No"> No
+    <input type="radio" name="concentrating" value="NotSure"> Not Sure
+    <p> Have you felt that you're a failure or let yourself or your family down?</p>
+    <input type="radio" name="failure" value="Yes" checked> Yes
+    <input type="radio" name="failure" value="No"> No
+    <input type="radio" name="failure" value="NotSure"> Not Sure
+    <p> Have you had a poor appetite? </p>
+    <input type="radio" name="poorAppetite" value="Yes" checked> Yes
+    <input type="radio" name="poorAppetite" value="No"> No
+    <input type="radio" name="poorAppetite" value="NotSure"> Not Sure
+    <p> Have you been overeating? </p>
+    <input type="radio" name="overeating" value="Yes" checked> Yes
+    <input type="radio" name="overeating" value="No"> No
+    <input type="radio" name="overeating" value="NotSure"> Not Sure
+    <p> Have you been feeling tired or had little energy?</p>
+    <input type="radio" name="tired" value="Yes" checked> Yes
+    <input type="radio" name="tired" value="No"> No
+    <input type="radio" name="tired" value="NotSure"> Not Sure
+    <p> Last night did you have trouble sleeping? </p>
+    <input type="radio" name="troubleSleeping" value="Yes" checked> Yes
+    <input type="radio" name="troubleSleeping" value="No"> No
+    <input type="radio" name="troubleSleeping" value="NotSure"> Not Sure
+    <p> Have you found yourself feeling down, depressed or hopeless? </p>
+    <input type="radio" name="feelingDown" value="Yes" checked> Yes
+    <input type="radio" name="feelingDown" value="No"> No
+    <input type="radio" name="feelingDown" value="NotSure"> Not Sure
+    <p> Have you found little pleasure or interest in doing things? </p>
+    <input type="radio" name="noInterest" value="Yes" checked> Yes
+    <input type="radio" name="noInterest" value="No"> No
+    <input type="radio" name="noInterest" value="NotSure"> Not Sure
+    
   </div>
+
+
+
+
+
   <button class="button">submit</button>
 </form>

@@ -31,3 +31,26 @@ body.home {
       margin: 5% 25%;
     }
 }
+
+#dailyFeeling{
+
+  img{
+    width: 85px;
+    height: 100px;
+    float: left;
+    margin: 20px;
+  }
+  input{
+  checkbox: hidden
+  }
+  .emotion{
+    text-align: center;
+    display: inline;
+  }
+}
+
+.newDay{
+  font-family: 'Homemade Apple', cursive;
+  text-align: center;
+  margin: 20px;
+}

@@ -1,1 +1,15 @@
-<h1>User show</h1>
+<div class="columns" style="background-color:<%= day.favcolor %>">
+  <div class="column is-two-thirds">
+      <img src="<%= day.imageSRC %>">
+  </div>
+  <div class="column is-one-third">
+    <h2 class="subtitle"><a href="/users/<%= day.createdBy.id %>"><%= day.createdBy.username %></a></h2>
+    <p><%= day.caption %></p>
+    <hr/>
+    <form method="POST" action="/days/<%= day.id %>">
+      <a href="/days/<%= day.id %>/edit" class="button">Edit Post</a>
+      <input type="hidden" name="_method" value="DELETE">
+      <button class="button is-danger">Delete</button>
+    </form>
+  </div>
+</div>

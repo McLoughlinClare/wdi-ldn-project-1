@@ -17,6 +17,7 @@ function fitbit(req, res, next) {
     json: true
   })
   .then((token) => {
+    oauth.fitbit.accessToken = token.access_token;
     return rp({
       method: 'GET',
       url: oauth.fitbit.profileUrl,
@@ -42,11 +43,12 @@ function fitbit(req, res, next) {
       });
   })
   .then((user) => {
+    req.user = user;
     req.session.userId = user.id;
     req.session.isAuthenticated = true;
 
     req.flash('info', `Welcome back, ${user.username}!`);
-    res.redirect('/profile');
+    res.redirect('/days');
   })
   .catch(next);
 }

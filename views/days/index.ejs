@@ -2,6 +2,7 @@
 
 <h1>Welcome</h1>
 <h1 class="title"><%= user.username %></h1>
+<p class="card-text">Sleep Last Night:<span class="sleep"></p>
 
 
 <div>
@@ -26,6 +27,8 @@
         </div>
         <h2 class="subtitle"><a href="/users/<%= days[i].createdBy.id %>"><%= days[i].createdBy.username %></a></h2>
         <p><%= days[i].summary %></p>
+        <p><%= days[i].stepsTaken %></p>
+        <p><%= days[i].hoursSlept %></p>
         <hr/>
         <a href="/days/<%= days[i].id %>" class="button">View Day</a>
         </div>
