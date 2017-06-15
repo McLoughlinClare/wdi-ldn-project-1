@@ -1,1 +1,206 @@
-<h1>user edit</h1>
+<h1>Edit Post</h1>
+<form method="POST" action="/profile" enctype="multipart/form-data">
+
+  <div class="field">
+    <label class="label" for="image">Image</label>
+    <label class="button is-primary" for="image">Choose file</label>
+    <input type="file" name="image" id="image" hidden>
+  </div>
+  <div class="dailyForm">
+    <label for="summary">Summarise today in one sentence</label>
+    <input type="text" name="summary" id="summary" class="dailyField">
+  </div>
+
+  <div class="dailyForm">
+    <label for="goodDeed">What was your good deed for today?</label>
+    <input type="text" name="goodDeed" id="goodDeed" class="goodDeedField">
+  </div>
+
+  <div class ="fitbitData">
+    <input type="hidden" name="stepsTaken" id="stepsTaken" value="">
+    <input type="hidden" name="hoursSlept" id="hoursSlept" value="">
+    <input type="hidden" name="formattedHoursSlept" id="formattedHoursSlept" value="">
+    <input type="hidden" name="heartRate" id="heartRate" value="">
+  </div>
+
+  <div class="colorform">
+    what colour sums up today?:
+    <input type="color" name="favcolor"><br>
+  </div>
+
+
+
+  <div class="dailyForm">
+    <label for="feeling">How are you feeling right now?</label>
+
+
+    <div id ="dailyFeeling">
+      <div class = "row">
+
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="scared" id="scared">
+          <div class="emotion">
+            <label for="scared"><img src ="/assets/scared.png">Scared</label>
+          </div>
+        </div>
+
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="shocked" id="shocked">
+          <div class="emotion">
+            <label for="shocked"><img src ="/assets/shocked.png">Shocked</label>
+          </div>
+        </div>
+
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="shy" id="shy">
+          <div class="emotion">
+            <label for="shy"><img src ="/assets/shy.png">Shy</label>
+          </div>
+        </div>
+
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="sleepy" id="sleepy">
+          <div class="emotion">
+            <label for="sleepy"><img src ="/assets/sleepy.png">Sleepy</label>
+          </div>
+        </div>
+      </div>
+
+      <div class = "row">
+
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="stressed" id="stressed">
+          <div class="emotion">
+            <label for="stressed"><img src ="/assets/stressed.png">stressed</label>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="worried" id="worried">
+          <div class="emotion">
+            <label for="worried"><img src ="/assets/worried.png">worried</label>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="suprised" id="suprised">
+          <div class="emotion">
+            <label for="suprised"><img src ="/assets/suprised.png">worried</label>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="sad" id="sad">
+          <div class="emotion">
+            <label for="sad"><img src ="/assets/sad.png">sad</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="neutral" id="neutral">
+          <div class="emotion">
+            <label for="neutral"><img src ="/assets/neutral.png">neutral</label>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="mischevious" id="mischevious">
+          <div class="emotion">
+            <label for="mischevious"><img src ="/assets/mischevious.png">mischevious</label>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="inLove" id="inLove">
+          <div class="emotion">
+            <label for="inLove"><img src ="/assets/inLove.png">In Love</label>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="heartbroken" id="heartbroken">
+          <div class="emotion">
+            <label for="heartbroken"><img src ="/assets/heartbroke.png">worried</label>
+          </div>
+        </div>
+      </div>
+
+      <div class = "row">
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="happy" id="happy">
+          <div class="emotion">
+            <label for="happy"><img src ="/assets/happy.png">Happy</label>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="annoyed" id="annoyed">
+          <div class="emotion">
+            <label for="annoyed"><img src ="/assets/annoyed.png">annoyed</label>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="disappointed" id="disappointed">
+          <div class="emotion">
+            <label for="disappointed"><img src ="/assets/disappointed.png">disappointed</label>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <input type="checkbox" name="feeling" class="dailyField" value="excited" id="excited">
+          <div class="emotion">
+            <label for="excited"><img src ="/assets/excited.png">Excited</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class ="depressionSelfAssessment"
+    <p>At any point today have you noticed any of the following symptoms?</p>
+
+    <p> Have you been moving or speaking slowly?</p>
+    <input type="radio" name="slowMoving" id="slowMoving" value="2" checked> Yes
+    <input type="radio" name="slowMoving" id="slowMoving" value="0"> No
+    <input type="radio" name="slowMoving" id="slowMoving" value="1"> Not Sure
+    <p> Have you been very fidgety, so that other people could notice? </p>
+    <input type="radio" name="fidgety" id="fidgety" value="2" checked> Yes
+    <input type="radio" name="fidgety" id="fidgety" value="0"> No
+    <input type="radio" name="fidgety" id="fidgety" value="1"> Not Sure
+    <p> Have you had some trouble concentrating on things like reading the paper or watching TV? </p>
+    <input type="radio" name="concentrating" id="concentrating" value="2" checked> Yes
+    <input type="radio" name="concentrating" id="concentrating" value="0"> No
+    <input type="radio" name="concentrating" id="concentrating" value="1"> Not Sure
+    <p> Have you felt that you're a failure or let yourself or your family down?</p>
+    <input type="radio" name="failure" id="failure" value="3" checked> Yes
+    <input type="radio" name="failure" id="failure" value="0"> No
+    <input type="radio" name="failure" id="failure" value="1"> Not Sure
+    <p> Have you had a poor appetite? </p>
+    <input type="radio" name="poorAppetite" id="poorAppetite" value="2" checked> Yes
+    <input type="radio" name="poorAppetite" id="poorAppetite" value="0"> No
+    <input type="radio" name="poorAppetite" id="poorAppetite" value="1"> Not Sure
+    <p> Have you been overeating? </p>
+    <input type="radio" name="overeating" id="overeating" value="2" checked> Yes
+    <input type="radio" name="overeating" id="overeating" value="0"> No
+    <input type="radio" name="overeating" id="overeating" value="1"> Not Sure
+    <p> Have you been feeling tired or had little energy?</p>
+    <input type="radio" name="tired" id="tired" value="2" checked> Yes
+    <input type="radio" name="tired" id="tired" value="0"> No
+    <input type="radio" name="tired" id="tired" value="1"> Not Sure
+    <p> Last night did you have trouble sleeping? </p>
+    <input type="radio" name="troubleSleeping" id="troubleSleeping" value="2" checked> Yes
+    <input type="radio" name="troubleSleeping" id="troubleSleeping" value="0"> No
+    <input type="radio" name="troubleSleeping" id="troubleSleeping" value="1"> Not Sure
+    <p> Have you found yourself feeling down, depressed or hopeless? </p>
+    <input type="radio" name="feelingDown" id="feelingDown" value="4" checked> Yes
+    <input type="radio" name="feelingDown" id="feelingDown" value="0"> No
+    <input type="radio" name="feelingDown" id="feelingDown" value="1"> Not Sure
+    <p> Have you found little pleasure or interest in doing things? </p>
+    <input type="radio" name="noInterest" id="noInterest" value="2" checked> Yes
+    <input type="radio" name="noInterest" id="noInterest" value="0"> No
+    <input type="radio" name="noInterest" id="noInterest" value="1"> Not Sure
+    <p> Have you had any feelings of self-harm or sucidal thoughts today? </p>
+    <input type="radio" name="selfHarm" id="selfHarm" value="10" checked> Yes
+    <input type="radio" name="selfHarm" id="selfHarm" value="0"> No
+    <input type="radio" name="selfHarm" id="selfHarm" value="1"> Not Sure
+
+    <input type="hidden" name="depressionScore" id="depressionScore" value="">
+
+
+  </div>
+
+  <button>Update</button>
+</form>
