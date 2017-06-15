@@ -4,17 +4,34 @@
   <meta charset="utf-8">
   <title>Knowing You</title>
 
-  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
   <script src="/js/app.js" charset="utf-8"></script>
 
 </head>
+<header>
+  <nav class="container">
+    <ul>
+      <li class="menu">&#9776;</li>
+      <div class="dropdown">
+
+        <li><a href="/login">Log In</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#advice">Advice</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/"><img src="/assets/posiLogo.png" alt=""></a></li>
+      </div>
+    </ul>
+  </nav>
+</header>
   <body>
     <% for(const type in messages) { %>
       <div class="alert alert-<%= type %>">

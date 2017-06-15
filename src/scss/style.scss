@@ -1,18 +1,100 @@
-body.home {
-    background-image: url('/assets/welcomeBackground.jpg');
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    postion: relative;
+//brand colours
+$brand-one: #FFC0CB; //pink
+$brand-two: #44D9E6; //blue
+$brand-three: #FFCC00; //yellow
+$brand-four: #78f29A; //green
+
+h1, h2, h3,{
+font-family: 'Coming Soon', cursive;
+}
+
+header {
+  // Fix the header to the top of the page, so that it stays in view when the page is scrolled
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  // height: 100px;
+  background-color: $brand-two;
+    nav {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          float: right;
+          margin-left: 20px;
+          line-height: 100px;
+          &:last-of-type {
+            float: left;
+            img{
+              height: 80px;
+              margin: 10px 0;
+            }
+          }
+          // Styles for the burger icon
+          &.menu {
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+          }
+          a {
+            color: white;
+          }
+      }
+  }
+}
+}
+
+
+
+.home {
+  background-image: url('/assets/welcomeBackground.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: calc(100vh - 100px);
+}
+
+.about{
+  background-image: url('/assets/about.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: calc(100vh - 100px);
+  color: white;
+  .aboutText{
+    float: right;
+    margin-right: 7%;
+    margin-top: 8%;
+  }
+}
+
+.advice{
+  background-image: url('/assets/telephone.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: calc(100vh - 100px);
+  color: black;
+  .adviceText{
+    padding: 15%;
+  }
+
 }
 
 #welcomeBox{
   position: absolute;
-  top: 30%;
-  right: 30%;
-  border: black 1px solid;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 40%;
-  height: 50%;
+  text-align: center;
     a{
       background-color: #C0C0C0;
       border: none;
@@ -23,29 +105,51 @@ body.home {
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      display: block;
       width: 200px;
-      margin: 20px 150px;
+      margin: 5px 0;
     }
     h1{
-      margin: 5% 25%;
+      margin: 0 0 20px;
     }
 }
+//profile page
+body.profile{
 
-#dailyFeeling{
 
-  img{
-    width: 85px;
-    height: 100px;
-    float: left;
-    margin: 20px;
+}
+
+//Logging a new day page.
+
+#newSummaryFitbitData{
+  border: 2px, black, solid;
+  display: inline-block;
+  .summarySleep{
+    background-color: $brand-one;
   }
-  input{
-  checkbox: hidden
+  .summarySteps{
+  background-color: $brand-three
   }
-  .emotion{
+}
+
+#dailyFeeling {
+  .emotion {
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin: 5px;
     text-align: center;
-    display: inline;
+    padding: 15px;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked ~ .emotion {
+    background-color: yellow;
+  }
+  img {
+    width: 85px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 10px;
   }
 }
 
@@ -53,4 +157,55 @@ body.home {
   font-family: 'Homemade Apple', cursive;
   text-align: center;
   margin: 20px;
+}
+
+body.logIn{
+  background-color: $brand-one;
+  .welcomeUser{
+    background-color: $brand-two;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    border: black;
+    display: inline-block;
+    margin: 20%;
+    h3{
+      text-align: center;
+    }
+    p{
+      text-align: center;
+    }
+    .loginForm{
+      text-align: center;
+      margin-top: 3%;
+      border-radius: 5%;
+      input{
+        width: 40%;
+      }
+    }
+    .button{
+      background-color: $brand-three;
+      padding: 15px 32px;
+      text-align: center;
+      margin-left: 40%;
+      margin-top: 5%;
+      font-size: 16px;
+      padding: 4%, 5%;
+      border: none;
+      border-radius: 3%;
+    }
+  }
+}
+
+
+#websiteSummary {
+  .websiteSummaryBox {
+    border: 2px, black, solid;
+
+    .registerImage {
+      width: 50px;
+      height: 50px;
+
+    }
+  }
 }

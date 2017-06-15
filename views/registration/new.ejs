@@ -1,23 +1,58 @@
-<h1>registration</h1>
-
+<main class="container">
 
 <% if (locals.message) { %>
   <p><%= message %></p>
-<% } %>
+  <% } %>
+<div class="row">
+  <div class = "col-md-4">
+  <form method="POST" action="/register">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="passwordConfirmation">Password Confirmation</label>
+      <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control">
+    </div>
 
-<form method="POST" action="/register">
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="passwordConfirmation">Password Confirmation</label>
-    <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control">
-  </div>
+    <button>Register</button>
+  </form>
+</div>
 
-  <button>Register</button>
-</form>
+  <div class="col-md-8" id="websiteSummary">
+    <div class="websiteSummaryBox">
+      <img class="registerImage" src="/assets/camera.png" alt="heartrate">
+      <p>Choose a photo from the day to upload</p>
+    </div>
+    <div class="websiteSummaryBox">
+      <img class="registerImage" src="/assets/goodDeed.png" alt="happy">
+      <p>Record your feelings and emotions of the day.</p>
+    </div>
+    <div class="websiteSummaryBox">
+      <img class="registerImage" src="/assets/fitbit.png" alt="heartrate" >
+      <p>Use your fitbit to log your sleeping habits, steps and heart rate</p>
+    </div>
+    <div class="websiteSummaryBox">
+      <img class="registerImage" src="/assets/compare.png" alt="compare" >
+      <p> Discover patterns in your emotions and physical patterns. </p>
+    </div>
+    <div class="websiteSummaryBox">
+      <img class="registerImage" src="/assets/compare.png" alt="compare" >
+      <p> Discover patterns in your emotions and physical wellbeing. </p>
+    </div>
+    <div class="websiteSummaryBox">
+      <img class="registerImage" src="/assets/depression.png" alt="compare" >
+      <p> Identify symptoms of mental illness before they become too severe. </p>
+    </div>
+      <div class="websiteSummaryBox">
+        <img class="registerImage" src="/assets/compare.png" alt="compare" >
+        <p> Recieve councelling guided by your data. </p>
+      </div>
+    </div>
+  </div>
+</div>
+</main>

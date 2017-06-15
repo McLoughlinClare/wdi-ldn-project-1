@@ -32,6 +32,8 @@ function createRoute(req, res, next) {
   console.log(req.user);
   req.body.createdBy = req.user;
 
+  console.log('req.body', req.body);
+
   Day
     .create(req.body)
     .then(() => res.redirect('/days'))

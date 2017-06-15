@@ -30,7 +30,7 @@ router.route('/oauth/fitbit')
 .get(oauthController.fitbit);
 
 router.route('/days')
-.get(day.index)
+.get(secureRoute, day.index)
 .post(upload.single('image'), day.create);
 
 router.route('/days/new')

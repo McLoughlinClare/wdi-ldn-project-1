@@ -1,16 +1,21 @@
-<h1>sessions new</h1>
+<body class="logIn">
 <% if (locals.message){%>
-<p><%= message%></p>
-<% } %>
+  <p><%= message%></p>
+  <% } %>
+<div class="welcomeUser container">
+  <h1> Welcome! </h1>
+  <p> please note, this online journal works best when it is used in conjunction with a fitbit. If you have not got a fitbit you can purchase one <a href ="#"> here</a> if you already have a fit bit, please log in with your fitbit.</p>
 
-<form method="POST" action="/login">
-  <div>
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username">
-  </div>
-  <div>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password">
-  </div>
-  <button class="button">Login</button>
-</form>
+  <form method="POST" action="/login">
+    <div class="loginForm">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username">
+    </div>
+    <div class="loginForm">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password">
+    </div>
+    <button class="button">Login</button>
+  </form>
+</div>
+</body>

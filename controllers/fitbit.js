@@ -22,6 +22,15 @@ function fitbitProxy(req, res){
       headers: {
         'Authorization': `Bearer ${accessToken}`
       }
+    }),
+    heartRate: rp({
+      //The ID of the user. Use "-" (dash) for current logged-in user.
+      url: `https://api.fitbit.com/1.2/user/-/activities/heart/date/${req.query.date}/1d.json`,
+      method: 'GET',
+      json: true,
+      headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }
     })
   };
 

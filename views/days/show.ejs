@@ -4,8 +4,17 @@
   </div>
   <div class="column is-one-third">
     <h2 class="subtitle"><a href="/users/<%= day.createdBy.id %>"><%= day.createdBy.username %></a></h2>
-    <p><%= day.caption %></p>
+    <p><%= day.summary %></p>
     <hr/>
+    <h2> Physical Wellbeing </h2>
+      <p> today's Steps: <%= day.stepsTaken %> </p>
+      <p> Hours Slept: <%= day.formattedHoursSlept %> </p>
+      <p> Resting Heart Rate: <%= day.heartRate %> </p>
+      <hr/>
+
+      <h2> Mental Wellbeing </h2>
+        <p> Depression Level: <%= day.depressionScore %> </p>
+
     <form method="POST" action="/days/<%= day.id %>">
       <a href="/days/<%= day.id %>/edit" class="button">Edit Post</a>
       <input type="hidden" name="_method" value="DELETE">

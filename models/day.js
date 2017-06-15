@@ -10,18 +10,22 @@ const daySchema = new mongoose.Schema({
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   stepsTaken: { type: Number },
   hoursSlept: { type: Number },
+  heartRate: {type: Number },
   formattedHoursSlept: { type: String },
+  goodDeed: { type: String},
   favcolor: { type: String },
-  slowMoving: {type: String },
-  fidgety: {type: String },
-  concentrating: {type: String },
-  failure: {type: String },
-  poorAppetite: {type: String },
-  overeating: {type: String },
-  tired: {type: String },
-  troubleSleeping: {type: String },
-  feelingDown: {type: String },
-  noInterest: {type: String }
+  slowMoving: {type: Number },
+  fidgety: {type: Number },
+  concentrating: {type: Number },
+  failure: {type: Number },
+  poorAppetite: {type: Number },
+  overeating: {type: Number },
+  tired: {type: Number },
+  troubleSleeping: {type: Number },
+  feelingDown: {type: Number },
+  noInterest: {type: Number },
+  selfHarm: {type: Number },
+  depressionScore: {type: Number }
 }, {
   timestamps: true
 });
