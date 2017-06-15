@@ -35,6 +35,7 @@ app.use(session({
 
 app.use(flash());
 
+app.locals.moment = require('moment');
 
 app.use(methodOverride((req) => {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {

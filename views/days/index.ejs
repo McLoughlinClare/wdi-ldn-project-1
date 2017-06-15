@@ -1,43 +1,47 @@
-<body class="profile">
-  <h1>Hello <%= user.username %></h1>
-  <h1 class="title"></h1>
-<div class ="row">
-  <div class ="col-md-4"
-  <h3> Today, why don't you...</h3>
-  <p><span class="betterness"></span>
-  </p>
-</div>
-</div>
-
-  <div class="button">
-    <a href="/days/new">Tell us about today.</a>
+<section class="profile row">
+  <div class="col-xs-12">
+    <h1>Hello <%= user.username %></h1>
   </div>
 
-  <div class="columns">
-    <div class="column">
-      <% for (let i = 0; i < days.length; i++) { %>
-        <% if (i === 0 || days[i].createdBy !== days[i-1].createdBy) { %>
-          <h1><%= days[i].createdBy.username %></h1>
-          <% } %>
-          <div class="columns">
-          <div class="column">
-          <a href="/days/<%= days[i].id %>">
-          </a>
-          </div>
-          <div class="column">
-          <a href="/days/<%= days[i].id %>">
-          <img src="<%= days[i].imageSRC %>">
-          </a>
-          </div>
-          <h2 class="subtitle"><a href="/users/<%= days[i].createdBy.id %>"><%= days[i].createdBy.username %></a></h2>
-          <p><%= days[i].summary %></p>
-          <p><%= days[i].stepsTaken %></p>
-          <p><%= days[i].hoursSlept %></p>
-          <hr/>
-          <a href="/days/<%= days[i].id %>" class="button">View Day</a>
-          </div>
-          </div>
-          <% } %>
+  <div class="profileHeading">
+    <div class="col-md-3">
+      <a href="/days/new">
+        <div class="profileButton profileHeadingSquare">
+          Tell us about today.
         </div>
+      </a>
+    </div>
 
-    </body>
+    <div class="col-md-3 suggestedActivity profileHeadingSquare">
+      <h3> Today, why don't you...</h3>
+      <p><span class="betterness"></span>
+      </p>
+    </div>
+
+    <div class="col-md-3 headingheartRate profileHeadingSquare">
+      <img src="/assets/heartRate.png" alt="heartRate">
+      <h3>Your resting Heart Rate is..<span class="heartRate"</span></h3>
+    </div>
+
+    <div class="col-md-3 headingStepsTaken profileHeadingSquare">
+      <img src="/assets/stepsTaken.png" alt="">
+      <h3>You have taken..
+      <span class="steps"</span>steps</h3>
+    </div>
+  </div>
+
+
+
+  <div class="col-xs-12">
+    <% for (let i = 0; i < days.length; i++) { %>
+      <div class="indexDay">
+        <a href="/days/<%= days[i].id %>">
+          <div class="indexDayImg" style="background-image:url(<%= days[i].imageSRC %>);border-color:<%= days[i].favColor %>">
+            <span><%= moment(days[i].createdAt).format('dddd Do MMM') %></span>
+          </div>
+        </a>
+      </div>
+    <% } %>
+  </div>
+
+</section>

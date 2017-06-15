@@ -1,7 +1,7 @@
 $(()=>{
 
   console.log('JS LOADED');
-///Random quote generator for new page.
+  ///Random quote generator for new page.
   function padNum(num) {
     if(num < 10) return `0${num}`;
     return num;
@@ -72,7 +72,10 @@ $(()=>{
   const todayBetterness = betternessActivity[randomactivity];
   $( 'span.betterness' ).html(todayBetterness);
 
-// to calculate date in a format for fitbit, also for new page.
+
+
+
+  // to calculate date in a format for fitbit, also for new page.
   let today = new Date();
   let todayView = new Date();
   const dd = padNum(today.getDate());
@@ -85,7 +88,7 @@ $(()=>{
   $( 'span.today' ).html(todayView);
 
 
-//Function to get and use fitbit data.
+  //Function to get and use fitbit data.
   let lastNightSleepMinutes = '';
   let stepsTaken = '';
   let heartRate = '';
@@ -143,7 +146,54 @@ $(()=>{
       $('form.newForm').trigger('submit');
     }
   }
+  //header functions
 
+  const $window = $(window);
+  const $header = $('header');
+  const $links = $('nav a');
+  const $dropdown = $('.dropdown');
+  const $menu = $('.menu');
+
+  function updateHeader() {
+    // Grab the height of the window (the height of the hero image)
+    const viewportHeight = $window.height();
+    // Grab the value of how far down the user has scrolled
+    const scrollTop = $window.scrollTop();
+    if(scrollTop >= viewportHeight - $header.height()) {
+      $header.addClass('translucent');
+    } else {
+      $header.removeClass('translucent');
+    }
+  }
+
+  function scrollToSection() {
+    const section = $(this).attr('href');
+    $('body').animate({
+      scrollTop: $(section).offset().top - 40
+    }, 1000, () => {
+      if ($window.width() < 575) {
+        $dropdown.slideToggle();
+      }
+    });
+  }
+
+  function toggleMenu() {
+    // Hide the menu if it's visible, show it if it's hidden
+    $dropdown.slideToggle();
+  }
+
+  function displayLinks() {
+    // If the window width is greater than or equal to 575px show the links
+    if ($window.width() >= 575) {
+      $dropdown.show();
+    }
+  }
+
+  // Event listeners
+  $window.on('scroll', updateHeader).trigger('scroll');
+  $window.on('resize', displayLinks);
+  $links.on('click', scrollToSection);
+  $menu.on('click', toggleMenu);
 
 
 

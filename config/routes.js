@@ -13,7 +13,7 @@ const upload       = require('../lib/upload');
 
 const oauth = require('../config/oauth');
 
-router.get('/', (req, res) => res.render('statics/index', { oauth }));
+router.get('/', (req, res) => res.render('statics/index', { oauth, container: 'none' }));
 
 router.route('/fitbits')
   .get(fitbitController.proxy);

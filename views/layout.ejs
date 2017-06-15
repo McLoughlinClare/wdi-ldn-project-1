@@ -40,7 +40,7 @@
         </div>
       </div>
     <% } %>
-    <main>
+    <main class="<% if(locals.container !== 'none') {%>container<% } %>">
       <%- body %>
     </main>
   </body>

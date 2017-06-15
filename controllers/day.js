@@ -84,7 +84,7 @@ function daysDelete (req, res, next) {
     if(!day) return res.notFound();
     return day.remove();
   })
-  .then(() => res.redirect('/days'))
+  .then(() => res.redirect('/'))
   .catch(next);
 }
 
