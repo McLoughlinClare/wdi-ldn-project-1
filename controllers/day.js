@@ -50,7 +50,7 @@ function daysEdit (req, res, next) {
   .then(day => {
     if(!day) return res.redirect();
 
-    return res.render('days/edit', { day });
+    return res.render('/days/edit', { day });
   })
   .catch(next);
 }
@@ -84,7 +84,7 @@ function daysDelete (req, res, next) {
     if(!day) return res.notFound();
     return day.remove();
   })
-  .then(() => res.redirect('/'))
+  .then(() => res.redirect('/days/index'))
   .catch(next);
 }
 

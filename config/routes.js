@@ -43,7 +43,7 @@ router.route('/days/:id')
 .delete(secureRoute, day.delete);
 
 
-router.route('days/:id/edit')
+router.route('/days/:id/edit')
 .get(day.edit)
 .put(secureRoute, day.update)
 .delete(secureRoute, day.delete);
